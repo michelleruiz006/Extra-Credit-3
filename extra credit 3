@@ -1,0 +1,65 @@
+#Simulation for Fortune Cookie 
+import random
+cookies = ["The early bird gets the worm, but the second mouse gets the cheese.",
+"The fortune you seek is in another cookie.",
+"A conclusion is simply the place where you got tired of thinking.",
+"A fresh start will put you on your way.",
+"Your reality check about to bounce."]
+
+fortune_cookie = random.choice(cookies)
+print(fortune_cookie)
+
+
+#-------------------------------------------------------------------------------------
+#Coin Flip 100 times 
+import random
+heads=0
+tails=0
+count=0
+
+while count<100: 
+    coin = random.randrange(2)
+    if coin == 0:
+         heads += 1
+    else:
+        tails += 1
+    count += 1
+print ("The number of heads was", heads,"the number of tails was", tails)
+
+
+#-------------------------------------------------------------------------------------
+#modified number game
+import random
+print("Modified 'Guess My Number'!. I'm thinking of a number between 1 and 100. Guess my number in 10 tries.")
+
+number = random.randint(1, 100)
+guess = int(input("Take a guess: "))
+tries = 0
+
+while guess != number:
+    tries+=1
+    if tries>=10:
+        print("Game Over! It took you more then 10 attempts.")
+        break
+    elif guess > number:
+        print("Lower...")
+    else:
+        print("Higher...")
+        
+    guess = int(input("Take a guess: "))
+
+if guess == number:
+    print("You guessed it! The number was", number, "it took you",tries,"tries")
+    
+    
+#-------------------------------------------------------------------------------------
+#Computer guesses your number
+import random
+print ("Player pick a random number between 1 and 100 the computer has to guess your number.")
+player_num = int(input())
+computer_num = random.randrange (1,100)
+if player_num == computer_num:
+    print ("You've got it!")
+else:
+    print ("Sorry thats the wrong number")
+print ("Your number is ", player_num, "the computer guessed", computer_num)
